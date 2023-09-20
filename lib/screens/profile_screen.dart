@@ -67,7 +67,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'Nama',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300
                             ),
@@ -75,7 +75,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'Ferdinand Wijaya Susilo',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500
                             ),
@@ -89,7 +89,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'Asal Kota',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300
                             ),
@@ -97,7 +97,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'Surakarta',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500
                             ),
@@ -111,7 +111,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'LinkedIn',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300
                             ),
@@ -119,7 +119,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'linkedin.com/in/\nferdinand-wijaya-susilo/',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500
                             ),
@@ -136,7 +136,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'GitHub',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300
                             ),
@@ -144,7 +144,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'github.com/ferdiws',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500
                             ),
@@ -158,7 +158,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             'Instagram',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w300
                             ),
@@ -166,7 +166,7 @@ class ProfileScreen extends StatelessWidget {
                           Text(
                             '@ferdinand_ws',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: 16,
                                 color: Colors.white,
                                 fontWeight: FontWeight.w500
                             ),
