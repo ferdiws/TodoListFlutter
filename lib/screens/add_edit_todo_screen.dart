@@ -23,7 +23,7 @@ class _AddEditTodoScreenState extends State<AddEditTodoScreen> {
       selectedColor = widget.todoItem!.color!;
       todoController.text = widget.todoItem!.todoText!;
       curId = widget.todoItem!.id!;
-      isDone = widget.todoItem!.isDone!;
+      isDone = widget.todoItem!.isDone;
     }
     super.initState();
   }
@@ -102,6 +102,7 @@ class _AddEditTodoScreenState extends State<AddEditTodoScreen> {
                       fontSize: 20,
                       color: darkGray
                   ),
+                  maxLines: 3,
                   controller: todoController,
                 ),
                 const SizedBox(height: 16,),
