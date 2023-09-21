@@ -215,41 +215,35 @@ class _TodoListScreenState extends State<TodoListScreen> {
     return AppBar(
       backgroundColor: darkGray,
       elevation: 0,
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          const Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 30,
+      title: const Text(
+        "Your To-Do List",
+        style: TextStyle(
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
+          fontSize: 20
+        ),
+      ),
+      leading: InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const ProfileScreen();
+          }));
+        },
+        child: Container(
+          margin: const EdgeInsets.only(left: 12, top: 12),
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle
           ),
-          const Text(
-            "Your To-Do List",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-              fontSize: 20
+          height: 30,
+          width: 30,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Image.asset(
+              'assets/images/ferdinand.jpg',
+              fit: BoxFit.fitWidth,
             ),
           ),
-          InkWell(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return const ProfileScreen();
-              }));
-            },
-            child: SizedBox(
-              height: 40,
-              width: 40,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset(
-                  'assets/images/ferdinand.jpg',
-                  fit: BoxFit.fitWidth,
-                ),
-              ),
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
