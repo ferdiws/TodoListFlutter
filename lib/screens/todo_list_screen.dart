@@ -92,7 +92,88 @@ class _TodoListScreenState extends State<TodoListScreen> {
                 ),
               );
             } else {
-              return const Column();
+              return Container(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 15
+                ),
+                child: Column(
+                  children: [
+                    searchBox(),
+                    Flexible(
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: ListView(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    bottom: 20,
+                                    top: 20,
+                                  ),
+                                  child: const Text(
+                                    'All ToDos',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white
+                                    ),
+                                  ),
+                                ),
+                                for (Todo todoItem in todoList.where((item) =>
+                                    item.todoText!.toLowerCase()
+                                        .contains(searchController.text.toLowerCase()))
+                                    .toList().reversed)
+                                  todoItem.isDone ? Container() : InkWell(
+                                    onTap: () => editTodo(todoItem),
+                                    child: TodoItem(
+                                      todo: todoItem,
+                                      onTodoChanged: handleTodoChanged,
+                                      onDeleteItem: deleteTodoItem,
+                                    ),
+                                  ),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(width: 16,),
+                          Expanded(
+                            child: ListView(
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.only(
+                                    top: 20,
+                                    bottom: 20,
+                                  ),
+                                  child: const Text(
+                                    'Completed',
+                                    style: TextStyle(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w500,
+                                        color: Colors.white
+                                    ),
+                                  ),
+                                ),
+                                for (Todo todoItem in todoList.where((item) =>
+                                    item.todoText!.toLowerCase()
+                                        .contains(searchController.text.toLowerCase()))
+                                    .toList().reversed)
+                                  todoItem.isDone ? InkWell(
+                                    onTap: () => editTodo(todoItem),
+                                    child: TodoItem(
+                                      todo: todoItem,
+                                      onTodoChanged: handleTodoChanged,
+                                      onDeleteItem: deleteTodoItem,
+                                    ),
+                                  ) : Container(),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              );
             }
           }
       ),

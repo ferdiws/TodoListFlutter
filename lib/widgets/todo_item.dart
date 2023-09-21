@@ -43,6 +43,7 @@ class TodoItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(5),
           ),
           child: IconButton(
+            padding: const EdgeInsets.symmetric(vertical: 0),
             color: Colors.white,
             iconSize: 18,
             icon: const Icon(Icons.delete),
