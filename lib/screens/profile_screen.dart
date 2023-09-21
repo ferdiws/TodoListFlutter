@@ -116,16 +116,16 @@ class ProfileScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w300
                             ),
                           ),
-                          Text(
-                            'linkedin.com/in/\nferdinand-wijaya-susilo/',
-                            style: TextStyle(
-                                fontSize: 16,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500
+                          Expanded(
+                            child: Text(
+                              'linkedin.com/in/ferdinand-wijaya-susilo/',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500
+                              ),
+                              textAlign: TextAlign.right,
                             ),
-                            textAlign: TextAlign.right,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
                           )
                         ],
                       ),
@@ -180,7 +180,163 @@ class ProfileScreen extends StatelessWidget {
             ),
           );
         } else {
-          return const Column();
+          return Container(
+            padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image.asset(
+                            'assets/images/ferdinand.jpg',
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                      ),
+                      const Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Ferdinand Wijaya Susilo',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500
+                            ),
+                          ),
+                          SizedBox(height: 8,),
+                          Text(
+                            'Surakarta',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
+                  const SizedBox(height: 32,),
+                  Container(
+                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+                    decoration: BoxDecoration(
+                        border: Border.all(width: 2, color: Colors.white),
+                        borderRadius: BorderRadius.circular(16)
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/linkedin.png',
+                                  width: 40,
+                                  height: 40,
+                                ),
+                                const SizedBox(width: 16,),
+                                const Text(
+                                  'LinkedIn',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              'linkedin.com/in/ferdinand-wijaya-susilo/',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500
+                              ),
+                              textAlign: TextAlign.right,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 8,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/github.png',
+                                  width: 40,
+                                  height: 40,
+                                  color: Colors.white,
+                                ),
+                                const SizedBox(width: 16,),
+                                const Text(
+                                  'GitHub',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              'github.com/ferdiws',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500
+                              ),
+                            )
+                          ],
+                        ),
+                        const SizedBox(height: 8,),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Image.asset(
+                                  'assets/images/instagram.png',
+                                  width: 50,
+                                  height: 50,
+                                ),
+                                const SizedBox(width: 6,),
+                                const Text(
+                                  'Instagram',
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w300
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              '@ferdinand_ws',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500
+                              ),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              )
+          );
         }
       })
     );
