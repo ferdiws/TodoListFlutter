@@ -63,69 +63,71 @@ class _AddEditTodoScreenState extends State<AddEditTodoScreen> {
                 left: 16,
                 right: 16
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    for (Color todoColor in todoColors)
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            selectedColor = todoColor;
-                          });
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          margin: const EdgeInsets.only(right: 8),
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: todoColor,
-                              border: Border.all(
-                                  width: selectedColor == todoColor ? 2.5 : 1,
-                                  color: Colors.white
-                              )
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      for (Color todoColor in todoColors)
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedColor = todoColor;
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            margin: const EdgeInsets.only(right: 8),
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: todoColor,
+                                border: Border.all(
+                                    width: selectedColor == todoColor ? 2.5 : 1,
+                                    color: Colors.white
+                                )
+                            ),
                           ),
                         ),
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 16,),
-                TextField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter task...',
-                    border: InputBorder.none,
+                    ],
                   ),
-                  style: const TextStyle(
-                      fontSize: 20,
-                      color: darkGray
+                  const SizedBox(height: 16,),
+                  TextField(
+                    decoration: const InputDecoration(
+                      hintText: 'Enter task...',
+                      border: InputBorder.none,
+                    ),
+                    style: const TextStyle(
+                        fontSize: 20,
+                        color: darkGray
+                    ),
+                    maxLines: 3,
+                    controller: todoController,
                   ),
-                  maxLines: 3,
-                  controller: todoController,
-                ),
-                const SizedBox(height: 16,),
-                const Text(
-                  'Priority',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: darkGray
+                  const SizedBox(height: 16,),
+                  const Text(
+                    'Priority',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: darkGray
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8,),
-                Text(
-                  selectedColor == lightRed ? 'Critical'
-                      : selectedColor == lightYellow ? 'High priority'
-                      : selectedColor == lightGreen ? 'Neutral'
-                      : selectedColor == babyBlue ? 'Low priority' : 'Unknown',
-                  style: const TextStyle(
-                      fontSize: 24,
-                      color: darkGray,
-                      fontWeight: FontWeight.w600
-                  ),
-                )
-              ],
+                  const SizedBox(height: 8,),
+                  Text(
+                    selectedColor == lightRed ? 'Critical'
+                        : selectedColor == lightYellow ? 'High priority'
+                        : selectedColor == lightGreen ? 'Neutral'
+                        : selectedColor == babyBlue ? 'Low priority' : 'Unknown',
+                    style: const TextStyle(
+                        fontSize: 24,
+                        color: darkGray,
+                        fontWeight: FontWeight.w600
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         } else {
@@ -136,69 +138,71 @@ class _AddEditTodoScreenState extends State<AddEditTodoScreen> {
                 left: 16,
                 right: 16
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    for (Color todoColor in todoColors)
-                      InkWell(
-                        onTap: () {
-                          setState(() {
-                            selectedColor = todoColor;
-                          });
-                        },
-                        child: Container(
-                          height: 50,
-                          width: 50,
-                          decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: todoColor,
-                              border: Border.all(
-                                  width: selectedColor == todoColor ? 2.5 : 1,
-                                  color: Colors.white
-                              )
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      for (Color todoColor in todoColors)
+                        InkWell(
+                          onTap: () {
+                            setState(() {
+                              selectedColor = todoColor;
+                            });
+                          },
+                          child: Container(
+                            height: 50,
+                            width: 50,
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: todoColor,
+                                border: Border.all(
+                                    width: selectedColor == todoColor ? 2.5 : 1,
+                                    color: Colors.white
+                                )
+                            ),
                           ),
                         ),
-                      ),
-                  ],
-                ),
-                const SizedBox(height: 16,),
-                TextField(
-                  decoration: const InputDecoration(
-                    hintText: 'Enter task...',
-                    border: InputBorder.none,
+                    ],
                   ),
-                  style: const TextStyle(
-                      fontSize: 20,
-                      color: darkGray
+                  const SizedBox(height: 16,),
+                  TextField(
+                    decoration: const InputDecoration(
+                      hintText: 'Enter task...',
+                      border: InputBorder.none,
+                    ),
+                    style: const TextStyle(
+                        fontSize: 20,
+                        color: darkGray
+                    ),
+                    maxLines: 3,
+                    controller: todoController,
                   ),
-                  maxLines: 3,
-                  controller: todoController,
-                ),
-                const SizedBox(height: 16,),
-                const Text(
-                  'Priority',
-                  style: TextStyle(
-                      fontSize: 20,
-                      color: darkGray
+                  const SizedBox(height: 16,),
+                  const Text(
+                    'Priority',
+                    style: TextStyle(
+                        fontSize: 20,
+                        color: darkGray
+                    ),
                   ),
-                ),
-                const SizedBox(height: 8,),
-                Text(
-                  selectedColor == lightRed ? 'Critical'
-                      : selectedColor == lightYellow ? 'High priority'
-                      : selectedColor == lightGreen ? 'Neutral'
-                      : selectedColor == babyBlue ? 'Low priority' : 'Unknown',
-                  style: const TextStyle(
-                      fontSize: 24,
-                      color: darkGray,
-                      fontWeight: FontWeight.w600
-                  ),
-                )
-              ],
+                  const SizedBox(height: 8,),
+                  Text(
+                    selectedColor == lightRed ? 'Critical'
+                        : selectedColor == lightYellow ? 'High priority'
+                        : selectedColor == lightGreen ? 'Neutral'
+                        : selectedColor == babyBlue ? 'Low priority' : 'Unknown',
+                    style: const TextStyle(
+                        fontSize: 24,
+                        color: darkGray,
+                        fontWeight: FontWeight.w600
+                    ),
+                  )
+                ],
+              ),
             ),
           );
         }
