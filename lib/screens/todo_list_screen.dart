@@ -18,6 +18,7 @@ class _TodoListScreenState extends State<TodoListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: darkGray,
       appBar: buildAppBar(),
       body: LayoutBuilder(
